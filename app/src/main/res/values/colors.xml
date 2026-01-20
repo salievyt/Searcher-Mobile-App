@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#F7F7F7</color>
+    <color name="blue">#4F8CFF</color>
+    <color name="green">#25D366</color>
+    <color name="black_text">#EDEDED</color>
+    <color name="white_text">#3F3F3F</color>
+    <color name="btn_text">#EDEDED</color>
+    <color name="placeholder">#6B7280</color>
+    <color name="input_fill">#FDFDFD</color>
+    <color name="input_stroke">#E8EAED</color>
+</resources>
