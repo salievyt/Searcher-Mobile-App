@@ -22,6 +22,9 @@ class WhatsappOnBoardFragment : Fragment() {
         binding.nextBtn.setOnClickListener {
             navController.navigate(R.id.lastOnBoardFragment)
         }
+        binding.skip.setOnClickListener {
+            navController.navigate(R.id.mainFragment)
+        }
     }
 
     override fun onCreateView(

@@ -21,6 +21,9 @@ class LastOnBoardFragment : Fragment() {
         binding.nextBtn.setOnClickListener {
             navController.navigate(R.id.mainFragment)
         }
+        binding.skip.setOnClickListener {
+            navController.navigate(R.id.mainFragment)
+        }
     }
 
     override fun onCreateView(
