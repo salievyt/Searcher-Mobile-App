@@ -22,7 +22,7 @@ class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return binding.root
     }
 
@@ -32,11 +32,7 @@ class MainFragment : Fragment() {
         val links = Links()
         binding.whatsappSearch.setOnClickListener {
             intent.setData(Uri.parse(links.searchWhatsapp(binding.input.text.toString())))
-            if (binding.input.text!!.isEmpty()){
-                startActivity(intent)
-            } else {
-                Toast.makeText(this.context, "Ошибка при поиске пожалуйста введите правильный номер телефона", Toast.LENGTH_SHORT).show()
-            }
+            startActivity(intent)
 
         }
     }

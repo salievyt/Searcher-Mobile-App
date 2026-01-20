@@ -38,14 +38,5 @@ class MainActivity : AppCompatActivity() {
         if (userPermission == Roles.Dev) {
             Toast.makeText(this, "Режим разработчика : Включен", Toast.LENGTH_SHORT).show()
         }
-        val links = Links()
-        val intent = Intent(Intent.ACTION_VIEW) //Явный интент
-        intent.setData(Uri.parse(links.searchWhatsapp("+996990055445")))
-//        startActivity(intent)
-//        binding.splashLogo.setOnClickListener {
-//            if (userPermission == Roles.Dev) {
-//                startActivity(intent)
-//            }
-//        }
     }
 }

@@ -72,5 +72,4 @@
         app:cornerRadius="12dp"
         app:backgroundTint="@color/blue"
         android:paddingVertical="14dp"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
