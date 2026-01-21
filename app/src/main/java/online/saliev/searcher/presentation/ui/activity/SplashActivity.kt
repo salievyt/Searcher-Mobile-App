@@ -1,4 +1,4 @@
-package online.saliev.searcher.ui.activity
+package online.saliev.searcher.presentation.ui.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import online.saliev.searcher.MainActivity
+import online.saliev.searcher.presentation.ui.activity.main.MainActivity
 import online.saliev.searcher.R
 import online.saliev.searcher.databinding.ActivitySplashBinding
 import online.saliev.searcher.viewmodel.Links

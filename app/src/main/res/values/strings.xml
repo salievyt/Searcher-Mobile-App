@@ -6,11 +6,14 @@
     <string name="desc_telegram">Приложения ищет человека по ник-неймупросто введите ник и нажмите на кнопку искать.</string>
     <string name="desc_whatsapp">Для того чтобы искать человека простовведите номер телефона и нажмите кнопку искать.</string>
     <string name="desc_GetStarted">На этом краткий инструктаж закончен.</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="skip">Пропустить</string>
     <string name="next">Далее</string>
     <string name="next_v2">Начать</string>
     <string name="enter_num_or_username">\@username или номер телефона</string>
-    <string name="search">Поиск</string>
+    <string name="searchTelegram">Поиск по Телеграму</string>
+    <string name="searchWhatsapp">Поиск по Whatsapp</string>
+    <string name="contact_name">Иван Иванов</string>
+    <string name="contact_number">+996 000 00 00 00</string>
+    <string name="version">v1.1.4</string>
 </resources>
