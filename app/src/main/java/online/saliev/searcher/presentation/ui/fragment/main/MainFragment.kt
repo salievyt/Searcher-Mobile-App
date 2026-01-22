@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.ContactsContract
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -13,20 +14,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import online.saliev.searcher.core.BaseFragment
 import online.saliev.searcher.data.api.model.Contact
 import online.saliev.searcher.databinding.FragmentMainBinding
+import online.saliev.searcher.presentation.ui.activity.main.MainActivity
 import online.saliev.searcher.presentation.ui.fragment.main.ContactAdapter
 import online.saliev.searcher.viewmodel.Links
+import online.saliev.searcher.viewmodel.Roles
+import androidx.core.net.toUri
+import androidx.navigation.fragment.findNavController
+import com.google.firebase.messaging.FirebaseMessaging
+import online.saliev.searcher.App
+import online.saliev.searcher.R
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
+
+    private val REQUEST_CODE = 1001
+
 
     private lateinit var adapter: ContactAdapter
 
     private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
             if (isGranted) {
-                // Разрешение получено, загружаем контакты
                 loadContacts()
             } else {
-                // В разрешении отказано. Показываем сообщение пользователю.
                 Toast.makeText(requireContext(), "Для отображения контактов необходимо разрешение", Toast.LENGTH_LONG).show()
             }
         }
@@ -34,16 +43,20 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     override fun getViewBinding() = FragmentMainBinding.inflate(layoutInflater)
 
     override fun initialize() {
+        if (!App.prefs.isShow()){
+            findNavController().navigate(R.id.OnBoardFragment)
+            App.prefs.changeShow(true)
+        }
         setupRecyclerView()
         checkContactsPermission()
-
+        Log.d("GET TOKEN", FirebaseMessaging.getInstance().getToken().toString())
         val intent = Intent(Intent.ACTION_VIEW)
         val links = Links()
 
         binding.whatsappSearch.setOnClickListener {
             val inputText = binding.input.text.toString()
             if (inputText.isNotBlank()) {
-                intent.setData(Uri.parse(links.searchWhatsapp(inputText)))
+                intent.setData(links.searchWhatsapp(inputText).toUri())
                 startActivity(intent)
             } else {
                 Toast.makeText(context, "Введите номер для поиска", Toast.LENGTH_SHORT).show()

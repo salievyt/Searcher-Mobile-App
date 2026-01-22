@@ -3,22 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/telegramOnBoardFragment">
+    app:startDestination="@id/mainFragment">
     <fragment
-        android:id="@+id/telegramOnBoardFragment"
-        android:name="online.saliev.searcher.presentation.ui.fragment.onBoard.TelegramOnBoardFragment"
-        android:label="fragment_telegram_on_board"
-        tools:layout="@layout/fragment_telegram_on_board" />
-    <fragment
-        android:id="@+id/whatsappOnBoardFragment"
-        android:name="online.saliev.searcher.presentation.ui.fragment.onBoard.WhatsappOnBoardFragment"
-        android:label="fragment_whatsapp_on_board"
-        tools:layout="@layout/fragment_whatsapp_on_board" />
-    <fragment
-        android:id="@+id/lastOnBoardFragment"
-        android:name="online.saliev.searcher.presentation.ui.fragment.onBoard.LastOnBoardFragment"
+        android:id="@+id/OnBoardFragment"
+        android:name="online.saliev.searcher.presentation.ui.fragment.onBoard.OnBoardFragment"
         android:label="fragment_last_on_board"
-        tools:layout="@layout/fragment_last_on_board" />
+        tools:layout="@layout/fragment_on_board" />
     <fragment
         android:id="@+id/mainFragment"
         android:name="online.saliev.searcher.presentation.ui.fragment.main.MainFragment"

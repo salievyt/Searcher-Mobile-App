@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".presentation.ui.fragment.onBoard.TelegramOnBoardFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
@@ -16,21 +14,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginEnd="30dp"
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         android:id="@+id/skip"/>
 
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_on_boarting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/logos_telegram"
         app:layout_constraintBottom_toTopOf="@+id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/skip"
-        tools:ignore="ContentDescription">
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/skip"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/title"
@@ -41,27 +38,27 @@
         android:textColor="@color/white_text"
         android:textSize="22sp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/desc1"
-        app:layout_constraintStart_toStartOf="parent">
-    </com.google.android.material.textview.MaterialTextView>
+        app:layout_constraintBottom_toTopOf="@+id/desc"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/desc1"
+        android:id="@+id/desc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="130dp"
+        android:layout_marginHorizontal="30dp"
         android:text="@string/desc_telegram"
         android:textColor="@color/white_text"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/next_btn"
-        app:layout_constraintStart_toStartOf="@+id/next_btn"
-        app:layout_constraintEnd_toEndOf="@id/next_btn">
-    </com.google.android.material.textview.MaterialTextView>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/btn_text"
@@ -72,4 +69,5 @@
         app:cornerRadius="12dp"
         app:backgroundTint="@color/blue"
         android:paddingVertical="14dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
